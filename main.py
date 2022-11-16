@@ -1,14 +1,14 @@
 """
 1- 
 2- 
-3- Create a list of functions and use that list
+3- 
 4- 
 5- 
 6- 
 7- 
 8- Reducing
 9- 
-10- List Comprehensions
+10- 
 11- Recursion
 
 """
@@ -72,31 +72,39 @@ def get_address(func):
     def get_filtered_address(x):
         return func(x)
     
-    def view_list(y):
-        # def list_type(z):
-        #     match z:
-        #         case "name":
-                    
-        get_list = list(map(lambda i: i['name'], func(y))) # 6. Mapping
-        return get_list
+    def get_address_list(y): # Not sure if this applicable 
+        def list_type(z):
+            match z:
+                case 1: # Show names only 
+                    return list(map(lambda i: i['name'], func(y))) # 6. Mapping
+                case 2: # Show address only
+                    return [([v for k,v in i.items() if k != 'name']) for i in func(y)] # List comprehension 
+                case _:
+                    return "Invalid input"
+        return list_type
     
-    return get_filtered_address, view_list # 5. Return functions 
+    return get_filtered_address, get_address_list # 5. Return functions 
 
-address_filter, address_names  = get_address(filtered_address) # 2. Assigning function to a variable 
+address_filter, address_filter_special  = get_address(filtered_address) # 2. Assigning function to a variable 
 
-# def add_address(book, x):
-#     book.append(x)
-#     print('Address added')
-
-# add = reduce(add_address, address_book)
+function_list = [address_filter, address_filter_special] # 3. Create a list of functions and use that list 
 
 
-# Test program
+# TEST PROGRAM
 stop = False
 while(not stop):
-    address_input = input("Type something:")
-    if (address_input == '0'):
-        stop = True 
-    else:
-        list_address = address_filter(address_input)
-        print(list_address)
+    print("0 - Basic\n1 - Special\n2 - End program")
+    function_type = int(input("Select function:"))
+    match function_type:
+        case 0:
+            address_input = input("Search address book:")
+            list_address = function_list[function_type](address_input)
+        case 1: 
+            print("\n0 - Full Detail\n1 - Name only\n2 - Address only")
+            filter_type = int(input("Select Type:"))
+            address_input = input("Search address book:")
+            list_address = function_list[function_type](address_input)(filter_type)
+        case 2:
+            stop = True
+            break
+    print(list_address)
