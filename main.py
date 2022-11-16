@@ -100,11 +100,11 @@ while(not stop):
             address_input = input("Search address book:")
             list_address = function_list[function_type](address_input)
         case 1: 
-            print("\n0 - Full Detail\n1 - Name only\n2 - Address only")
+            print("\n1 - Name only\n2 - Address only")
             filter_type = int(input("Select Type:"))
             address_input = input("Search address book:")
             list_address = function_list[function_type](address_input)(filter_type)
         case 2:
             stop = True
             break
-    print(list_address)
+    print(f"{list_address}\n")
