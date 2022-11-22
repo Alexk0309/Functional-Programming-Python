@@ -20,6 +20,7 @@ from functools import reduce
 address_book = [
     {
     'name': 'Anita Dick',
+    'age': 20,
     'number': '73',
     'street': 'Jln 3/23A',
     'street2': 'Danau Kota',
@@ -28,6 +29,7 @@ address_book = [
     'state': 'Wilayah Persekutuan'
     }, {
     'name': 'Ligma Johnson',
+    'age': 65,
     'number': '39B',
     'street': 'Jalan Tun Razak',
     'street2': 'Empire Tower 182',
@@ -36,6 +38,7 @@ address_book = [
     'state': 'Wilayah Persekutuan'
     }, {
     'name': 'Bendoverson',
+    'age': 45,
     'number': '11A',
     'street': 'Jln 6/23E',
     'street2': 'Danau Kota',
@@ -44,6 +47,7 @@ address_book = [
     'state': 'Wilayah Persekutuan'
     }, {
     'name': 'Harry Cox',
+    'age': 22,
     'number': '35',
     'street': 'Jln Camar 5',
     'street2': 'Taman Perling',
@@ -52,6 +56,7 @@ address_book = [
     'state': 'Johor'
     }, {
     'name': 'Martha Fokker',
+    'age': 34,
     'number': '27',
     'street': 'Jalan Tpj 3',
     'street2': 'Taman Perindustrian Jaya',
@@ -105,11 +110,18 @@ address_filter, address_filter_special  = get_address(filtered_address) # 2. Ass
 
 function_list = [address_filter, address_filter_special] # 3. Create a list of functions and use that list 
 
+#For Reduce
+def get_all_age():
+    return list(map(lambda i:i['age'], address_book))
+
+def get_sum_age(acc,i):
+    return acc + i
+
 
 # TEST PROGRAM
 stop = False
 while(not stop):
-    print("0 - Basic\n1 - Special\n2 - End program")
+    print("0 - Basic\n1 - Special\n2 - Get average age\n3 - End program")
     function_type = int(input("Select function:"))
     match function_type:
         case 0:
@@ -121,6 +133,10 @@ while(not stop):
             address_input = input("Search address book:")
             list_address = function_list[function_type](address_input)(filter_type)
         case 2:
+            age_Average = get_all_age()
+            avg = reduce(get_sum_age, age_Average) / len(age_Average)
+            list_address = avg
+        case 3:
             stop = True
             break
     print(f"{list_address}\n")
