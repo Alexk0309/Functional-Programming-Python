@@ -72,10 +72,10 @@ def get_address(func):
     def get_filtered_address(x):
         return func(x)
     
-    def get_address_list(y): # Not sure if this applicable 
+    def get_address_list(y): 
         def list_type(z):
             
-            def print_obj(i, obj_list): # Recursion
+            def print_obj(i, obj_list): # 11. Recursion
                 maximum = len(obj_list)
                 index = i + 1
                 if i >= maximum:
