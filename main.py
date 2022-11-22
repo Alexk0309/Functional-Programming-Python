@@ -1,18 +1,3 @@
-"""
-1- 
-2- 
-3- 
-4- 
-5- 
-6- 
-7- 
-8- Reducing (Average age or average people)
-9- 
-10- 
-11- Recursion (printing out names )
-
-"""
-
 from functools import reduce 
 
 # Sample data of address book 
