@@ -6,10 +6,10 @@
 5- 
 6- 
 7- 
-8- Reducing
+8- Reducing (Average age or average people)
 9- 
 10- 
-11- Recursion
+11- Recursion (printing out names )
 
 """
 
@@ -74,11 +74,27 @@ def get_address(func):
     
     def get_address_list(y): # Not sure if this applicable 
         def list_type(z):
+            
+            def print_obj(i, obj_list): # Recursion
+                maximum = len(obj_list)
+                index = i + 1
+                if i >= maximum:
+                    return
+                else:
+                    print()
+                    print(f"{index}. {obj_list[i]}")
+                    print_obj(i + 1, obj_list)
+                print()
+            
             match z:
                 case 1: # Show names only 
-                    return list(map(lambda i: i['name'], func(y))) # 6. Mapping
+                    # List of student names 
+                    names = list(map(lambda i: i['name'], func(y))) # 6. Mapping
+                    return print_obj(0, names)
                 case 2: # Show address only
-                    return [([v for k,v in i.items() if k != 'name']) for i in func(y)] # List comprehension 
+                    # List of addresses
+                    addresses = [([v for k,v in i.items() if k != 'name']) for i in func(y)] # List comprehension 
+                    return print_obj(0, addresses)
                 case _:
                     return "Invalid input"
         return list_type
