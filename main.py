@@ -4,25 +4,25 @@ from functools import reduce
 # 1. Separaring functions and data 
 address_book = [
     {
-    'name': 'Anita Dick',
+    'name': 'Anita Fick',
     'age': 20,
     'number': '73',
     'street': 'Jln 3/23A',
     'street2': 'Danau Kota',
     'post': '53300',
     'city': 'Kuala Lumpur',
-    'state': 'Wilayah Persekutuan'
+    'state': 'Selangor'
     }, {
-    'name': 'Ligma Johnson',
+    'name': 'Figma Johnson',
     'age': 65,
     'number': '39B',
     'street': 'Jalan Tun Razak',
     'street2': 'Empire Tower 182',
     'post': '50400',
     'city': 'Kuala Lumpur',
-    'state': 'Wilayah Persekutuan'
+    'state': 'Selangor'
     }, {
-    'name': 'Bendoverson',
+    'name': 'Anil Bendoverson',
     'age': 45,
     'number': '11A',
     'street': 'Jln 6/23E',
@@ -51,6 +51,13 @@ address_book = [
     }     
 ]
 
+def printingInfo():
+    print("==========================================================\n")
+    print("People Available in This Address Book : \n")
+    print("1. Anita Fick\n2. Figma Johnson\n3. Anil Bendoverson\n4. Harry Cox\n5. Martha Fokker\n")
+    print("==========================================================\n")
+    print("Choose the type of search you wish to perform : \n")
+    print("Basic Search returns all the info of a field search in the address book \n")
 
 def filtered_address(x):
     # 7. Filtering 
@@ -105,9 +112,10 @@ def get_sum_age(acc,i):
 
 # TEST PROGRAM
 stop = False
+printingInfo()
 while(not stop):
-    print("0 - Basic\n1 - Special\n2 - Get average age\n3 - End program")
-    function_type = int(input("Select function:"))
+    print("0 - Basic\n1 - Special\n2 - Get Average Age\n3 - End program")
+    function_type = int(input("\nSelect function:"))
     match function_type:
         case 0:
             address_input = input("Search address book:")
