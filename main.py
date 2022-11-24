@@ -1,7 +1,7 @@
 from functools import reduce 
 
 # Sample data of address book 
-# 1. Separaring functions and data 
+# 1. Separating functions and data 
 address_book = [
     {
     'name': 'Anita Fick',
