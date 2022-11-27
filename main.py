@@ -4,7 +4,7 @@ from functools import reduce
 # 1. Separating functions and data 
 address_book = [
     {
-    'name': 'Anita Fick',
+    'name': 'Lim Kah Hoe',
     'age': 20,
     'number': '73',
     'street': 'Jln 3/23A',
@@ -13,7 +13,7 @@ address_book = [
     'city': 'Kuala Lumpur',
     'state': 'Selangor'
     }, {
-    'name': 'Figma Johnson',
+    'name': 'Davina Rao',
     'age': 65,
     'number': '39B',
     'street': 'Jalan Tun Razak',
@@ -22,7 +22,7 @@ address_book = [
     'city': 'Kuala Lumpur',
     'state': 'Selangor'
     }, {
-    'name': 'Anil Bendoverson',
+    'name': 'Chia Xin Yi',
     'age': 45,
     'number': '11A',
     'street': 'Jln 6/23E',
@@ -31,7 +31,7 @@ address_book = [
     'city': 'Kuala Lumpur',
     'state': 'Wilayah Persekutuan'
     }, {
-    'name': 'Harry Cox',
+    'name': 'Ali Abdul',
     'age': 22,
     'number': '35',
     'street': 'Jln Camar 5',
@@ -40,7 +40,7 @@ address_book = [
     'city': 'Johor Bahru',
     'state': 'Johor'
     }, {
-    'name': 'Martha Fokker',
+    'name': 'Jessica Jones',
     'age': 34,
     'number': '27',
     'street': 'Jalan Tpj 3',
@@ -54,7 +54,7 @@ address_book = [
 def printingInfo():
     print("==========================================================\n")
     print("People Available in This Address Book : \n")
-    print("1. Anita Fick\n2. Figma Johnson\n3. Anil Bendoverson\n4. Harry Cox\n5. Martha Fokker\n")
+    print("1. Lim Kah Hoe\n2. Davina Rao\n3. Chia Xin Yi\n4. Ali Abdul\n5. Jessica Jones\n")
     print("==========================================================\n")
     print("Choose the type of search you wish to perform : \n")
     print("Basic Search returns all the info of a field search in the address book \n")
