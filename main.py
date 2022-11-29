@@ -103,7 +103,7 @@ address_filter, address_filter_special  = get_address(filtered_address) # 2. Ass
 function_list = [address_filter, address_filter_special] # 3. Create a list of functions and use that list 
 
 #For Reduce
-def get_all_age():
+def get_all_age(address_book):
     return list(map(lambda i:i['age'], address_book))
 
 def get_sum_age(acc,i):
@@ -126,7 +126,7 @@ while(not stop):
             address_input = input("Search address book:")
             list_address = function_list[function_type](address_input)(filter_type)
         case 2:
-            age_Average = get_all_age()
+            age_Average = get_all_age(address_book)
             avg = reduce(get_sum_age, age_Average) / len(age_Average)
             list_address = avg
         case 3:
