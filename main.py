@@ -98,7 +98,7 @@ def get_address(func):
     
     return get_filtered_address, get_address_list # 5. Return functions 
 
-address_filter, address_filter_special  = get_address(filtered_address) # 2. Assigning function to a variable 
+address_filter, address_filter_special  = get_address(filtered_address) # 2. Assigning function to a variable & Passing functions as arguments 
 
 function_list = [address_filter, address_filter_special] # 3. Create a list of functions and use that list 
 
